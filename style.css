@@ -367,3 +367,38 @@ h3 {
 .email, .pass, .repass, .level, .file {
     margin-bottom: 10px;
 }
+
+/* Phan ads */
+.container {
+    position: fixed;
+    border:1px solid red;
+    border-radius:5px;
+    padding:0 5px;
+    overflow:hidden;
+    background-color:white;
+    box-shadow: 0 0 5px 0 #00000066, 0 0 5px 0 #0000004d;
+}
+
+.adsvercontainer {   
+    left:0;
+    top:10px;       
+    height:300px;   
+}
+
+.adsvertext {
+    white-space:wrap;
+}
+
+.adstext {
+    position:absolute;
+    left:5px;
+}
+
+.adshorcontainer {
+    bottom:50px;
+    height:50px;
+}
+
+.adshortext{
+    white-space:nowrap;
+}

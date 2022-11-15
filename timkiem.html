@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Nhập</title>
+    <title>Tìm Kiếm</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        window.onload=function(){
+            showSearch();
+        }
+    </script>
 </head>
 <body>
     <!-- Phần đầu trang -->
@@ -45,31 +51,7 @@
 
     <!-- Phần thân -->
     <main>
-        <h1>ĐĂNG NHẬP</h1>
-        <div class="flex flex-ct">
-            <form id="signin" onsubmit="return loginValidation(this)">
-                <img width="200px" src="./images/dangnhap/userlogin.png" alt="login">
-                <div class="email">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input name="email" type="email">
-                </div>
-    
-                <div class="pass">
-                    <i class="fa-solid fa-key"></i>
-                    <input name="pass" type="password">
-                </div>
-    
-                <div>
-                    <button>Đăng Nhập</button>
-                    <button>Hủy</button>
-                </div>
-    
-                <div>
-                    Bạn quên <span><a href="">Mật khẩu?</a></span>
-                    <input type="checkbox"> Ghi nhớ cho lần đăng nhập sau
-                </div>
-            </form>
-        </div>
+        <div id="searchDetails"></div>
     </main>
 
     <!-- Phần chân trang -->

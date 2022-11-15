@@ -30,12 +30,13 @@
             <a href="dangky.html">Đăng Ký</a>
             <a href="lienhe.html">Liên Hệ</a>
 
+            <!-- Phần tìm kiếm -->
             <div class="search-container">
-                <form method="get" action="#">
+                <form onsubmit="return doSearch()" name="frm-search" method="get" action="timkiem.html">
                     <div class="input-container">
-                        <input type="text" id="search" placeholder="Nhập nội dung cần tìm...">
-                        <i class="icon-white fa-solid fa-magnifying-glass"></i>
-                        <i class="icon-pink fa-solid fa-cart-shopping"></i>
+                        <input onkeypress="checkKeySearch(event)" type="text" id="search" name="words" placeholder="Nhập nội dung cần tìm...">
+                        <i onclick="doSearch()" class="icon-white fa-solid fa-magnifying-glass"></i>
+                        <i onclick="openCart()" class="icon-pink fa-solid fa-cart-shopping"></i>
                     </div>
                 </form>
             </div>
@@ -129,5 +130,8 @@
             <img width="50" src="./images/top.png" alt="gotop" id="gotop">
         </a>
     </footer>
+
+    <!-- Phan JS -->
+    <script src="./main.js"></script>
 </body>
 </html>

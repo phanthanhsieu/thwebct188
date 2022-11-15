@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Nhập</title>
+    <title>Đơn Hàng</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        window.onload=function(){
+            showCart();
+            window.onstorage=()=>{
+                showCart();
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- Phần đầu trang -->
@@ -45,31 +54,41 @@
 
     <!-- Phần thân -->
     <main>
-        <h1>ĐĂNG NHẬP</h1>
-        <div class="flex flex-ct">
-            <form id="signin" onsubmit="return loginValidation(this)">
-                <img width="200px" src="./images/dangnhap/userlogin.png" alt="login">
-                <div class="email">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input name="email" type="email">
-                </div>
-    
-                <div class="pass">
-                    <i class="fa-solid fa-key"></i>
-                    <input name="pass" type="password">
-                </div>
-    
-                <div>
-                    <button>Đăng Nhập</button>
-                    <button>Hủy</button>
-                </div>
-    
-                <div>
-                    Bạn quên <span><a href="">Mật khẩu?</a></span>
-                    <input type="checkbox"> Ghi nhớ cho lần đăng nhập sau
-                </div>
-            </form>
-        </div>
+        <article class="main-content">
+            <h1>CHI TIẾT ĐƠN HÀNG</h1>
+            <table border="1" width="100%" id="cartDetail">
+                <thead>
+                    <tr>
+                        <th>Hình SP</th>
+                        <th>Tên SP</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6" align="right">Tổng thành tiền (A) = <span id="bill_pre_tax_total"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" align="right">Chiết khấu (B) = <span id="bill_discount"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" align="right">Thuế (C) = 10% x (A - B) = <span id="bill_tax"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" align="right">Tổng đơn hàng = A - B + C = <span id="bill_total"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" align="center" height="40px">
+                            <button type="submit">Xác nhận đơn hàng</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </article>
     </main>
 
     <!-- Phần chân trang -->
